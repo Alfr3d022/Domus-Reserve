@@ -8,17 +8,35 @@ body {
 
 .backG{
     background-image: url('backBlack.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     background-attachment:fixed;
-    background-position:center;
+    background-size:contain;
+}
+
+.inputLogin{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-bottom: 15%;
+}
+
+.imgLogin{
+    margin-top: 15%;
+    width: 60%;
+    width: 200px;
 }
 
 .center {
     display: block;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.btnRed{
+    
+    color: white;
+    background-color: red;
 }
 
 .text-white {
