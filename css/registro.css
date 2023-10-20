@@ -8,23 +8,22 @@ body {
 
 .backG{
     background-image: url('backBlack.png');
-    background-position: center;
     margin-left: auto;
     width: 400px;
-    height: 350px;
+    height: 420px;
     flex-shrink: 0;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.inputLogin{
+.inputRegistro{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 
-.imgLogin{
+.imgRegistro{
     margin-top: 15%;
     width: 200px;
 }
@@ -38,7 +37,7 @@ body {
 }
 
 .btnRed{
-    margin-left: 140px;
+    margin-left: 105px;
     border-radius: 5px;
     border: 1px solid #1E2B2E;
     background: #E4002B;
@@ -52,7 +51,7 @@ body {
 }
 
 .labelRegis{
-    margin-left: 140px;
+    margin-left: 180px;
     font-size: 10px;
     display: flex;
     width: 112px;
