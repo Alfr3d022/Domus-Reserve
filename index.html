@@ -14,69 +14,109 @@
 
 <body>
 
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-center w3-large" style="margin: 0 auto; background: rgba(21, 21, 21, 1);">
-            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
-                title="Barra de navegação"><i class="fa fa-bars"></i></a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Locais</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sobre</a>
-            <div class="w3-bar-item w3-right w3-button w3-hide-small w3-padding-large w3-hover-white">
-                <a href="">
-                    <i class="fa fa-user" aria-hidden="true" style="vertical-align: middle;"></i>
-                    <span>
-                        <a href="login.html">Login</a>
-
-                    </span>
-                </a>
+    <!-- Imagem Responsiva -->
+    <img class="responsive-img" src="C:\Users\giovanni.cardoso\Downloads\Domus-Reserve-main\imagens\fundo.png" alt="">
+    <!-- cabeçalho -->
+    <div class="header-wrapper">
+        <div class="header header-bottom-border">
+            <div class=""><p></p></div>
+            <style>
+                .margen {
+                    margin-left: 30%;
+                }
+            </style>
+            <div class="nav-options">
+                <a class="margen" href="index.html"><h3>Home</h3></a>
+                <a href="#"><h3>Locais</h3></a>
+                <a href="#"><h3>Sobre</h3></a>
             </div>
-        </div>
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Locais</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Sobre</a>
-        </div>
-
-
-    </div>
-    <br>
-    <br>
-    <header class="w3-container w3-center w3-xlarge"
-        style="padding: 148px 36px; background-image: url('imagens/banner.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; width: 100%;">
-
-    </header>
-    <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container">
-        <div class="w3-content">
-            <div class="w3-twothird">
-                <h1 style="border-bottom: 1px solid black;">Salas</h1>
-               
-            </div>
-
-            
-        </div>
-    </div>
-
-    <!-- Second Grid -->
-    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-        <div class="w3-content">
-            
-
-            <div class="w3-twothird">
-                <h1 style="border-bottom: 1px solid black;">Restaurante</h1>
-              
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="registro.html" class="register-btn">Registro</a>
             </div>
         </div>
     </div>
 
-    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-        <h1 class="w3-margin w3-xlarge">Domus Reserve</h1>
+    <h1 class="nome w3-center h1t">Unifeb - Barretos</h1>
+
+    <!-- MAIN Pagina -->
+    <!-- SALAS -->
+    <h5 class="grid-container h1t"><a href="#">Salas de Aulas Unifeb</a></h5>
+    <div class="grid-container" id="gridContainerSalas">
     </div>
 
+    <!-- -->
+    <h5 class="grid-container h1t"><a href="#">Instalações Unifeb</a></h5>
+    <div class="grid-container" id="gridContainerEventos">
+    </div>
+
+    <!-- Laboratorios -->
+    <h5 class="grid-container h1t"><a href="#">Laboratórios Unifeb</a></h5>
+    <div class="grid-container" id="gridContainerQuartos">
+    </div>
+
+
+    <script>
+        // Informações sobre Salas
+        const salas = [
+            { nomeDentro: 'Sala 1 - Bloco Laranjão', imagem: 'imagens/fundo.png' },
+            { nomeDentro: 'Sala 2 - Bloco Laranjão', imagem: 'imagens/fundo.png' },
+            { nomeDentro: 'Sala 3 - Bloco Laranjão', imagem: 'imagens/fundo.png' },
+            { nomeDentro: 'Sala 4 - Bloco Laranjão', imagem: 'imagens/fundo.png' }
+        ];
+
+        // Informações sobre Eventos
+        const InstalaçõesUnifeb = [
+            { nomeDentro: 'Quadra' },
+            { nomeDentro: 'Anfiteatro' },
+            { nomeDentro: ' ‎ ' },
+            { nomeDentro: ' ‎ ' }
+        ];
+
+        // Informações sobre Laboratórios
+        const laboratorios = [
+            { nomeDentro: 'T.I - Laboratórios 1 ' },
+            { nomeDentro: 'T.I - Laboratórios 2' },
+            { nomeDentro: 'T.I - Laboratórios 3' },
+            { nomeDentro: 'M.V - Laboratórios 1' }
+        ];
+
+        // Função para criar elementos
+        function criarElementos(containerId, dados) {
+            const container = document.getElementById(containerId);
+            for (let i = 0; i < dados.length; i++) {
+                const gridItem = document.createElement('div');
+                gridItem.classList.add('grid-item', 'w3-hover-opacity');
+
+                const nomeCima = document.createElement('div');
+                nomeCima.classList.add('nomecima');
+                nomeCima.textContent = dados[i].nomeDentro;
+
+                const img = document.createElement('img');
+                img.src = dados[i].imagem; // Adiciona o caminho da imagem
+                img.alt = 'Imagem ' + (i + 1);
+
+                const nomeDentro = document.createElement('div');
+                nomeDentro.classList.add('nome');
+                nomeDentro.textContent = dados[i].nomeDentro;
+
+                gridItem.appendChild(nomeCima);
+                gridItem.appendChild(img);
+                gridItem.appendChild(nomeDentro);
+
+                container.appendChild(gridItem);
+            }
+        }
+
+        // Criar elementos para cada tópico
+        criarElementos('gridContainerSalas', salas);
+        criarElementos('gridContainerEventos', InstalaçõesUnifeb);
+        criarElementos('gridContainerQuartos', laboratorios);
+    </script>
+
+    <br /><br />
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <footer class="w3-container footer1 w3-padding-1 w3-black w3-center w3-opacity">
         <div class="w3-xlarge w3-padding-32">
             <i class="fa fa-facebook-official w3-hover-opacity"></i>
             <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -99,7 +139,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
