@@ -1,0 +1,130 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin: 0 11%;
+    margin-top: 3px
+
+}
+.h1t {
+    margin-top: 4%;
+    color:white;
+}
+.grid-item {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* Largura do quadrado aumentada para 300px */
+    height: 120px; /* Altura do quadrado aumentada para 300px */
+}
+
+    .grid-item img {
+        width: 100%;
+        height: 95%;
+        margin-bottom: 0px;
+    }
+
+.nome {
+    font-weight: bold;
+}
+.nomecima {
+    position: absolute; /* Define a posi��o como absoluta para posicionamento personalizado */
+    top: -30px; /* Move o texto 30 pixels para cima em rela��o ao topo do quadrado */
+    left: 0; /* Alinha o texto com o lado esquerdo do quadrado */
+}
+
+
+
+
+.w3-bar, h1, button {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.fa-anchor, .fa-coffee {
+    font-size: 200px
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(21, 21, 21, 0.90); /* Cor de fundo para o corpo da p�gina */
+}
+
+.header-wrapper {
+    padding: 0px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    color: #ffffff;
+}
+
+.header-bottom-border {
+    border-bottom: 1px solid white; /* Linha branca de 1 pixel na parte inferior do cabe�alho */
+}
+
+
+.nav-options {
+    display: flex;
+    gap: 40px;
+}
+
+    .nav-options a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+.login-btn, .register-btn {
+    padding: 5px 13px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+
+.footer1 {
+    padding-top: 10px
+}
+
+.sobreposicao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo preta semi-opaca */
+    z-index: 1; /* Garante que a sobreposi��o esteja acima da imagem e do texto */
+}
+
+.grid-item.ultimo-item {
+    position: relative;
+    /* Para posicionar corretamente a sobreposi��o no �ltimo item */
+}
+
+.back {
+    position:relative;
+    margin:50px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    background: #212121;
+}
+
+.lineh1{
+    text-decoration:underline;
+    color: #ffffff;
+}
