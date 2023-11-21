@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    margin: 0 11%;
+    margin: 1%;
     margin-top: 3px
 
 }
@@ -127,4 +127,21 @@ body {
 .lineh1{
     text-decoration:underline;
     color: #ffffff;
+}
+
+.imgsala{
+    width: 361px;
+    height: 191px;
+    margin-right: 3%;   
+}
+
+.imgsala1{
+    width: 361px;
+    height: 191px;  
+}
+
+.btn{
+    border-radius: 5px;
+    border: 5px solid #E4002B;
+    background: #E4002B;
 }
