@@ -2,9 +2,9 @@
   "name": "domus-reserve",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dbServer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/Alfr3d022/Domus-Reserve/issues"
   },
-  "homepage": "https://github.com/Alfr3d022/Domus-Reserve#readme"
+  "homepage": "https://github.com/Alfr3d022/Domus-Reserve#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
 }
