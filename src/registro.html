@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domus Reserve</title>
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/w3.css">
+</head>
+<body>
+    <main>
+        <section class="backG">
+                <div class="inputRegistro">
+                    <img class="imgRegistro"  src="imagens/marca.png" alt="Domus Reserve">
+                    <form action="/add-registro" method="POST">
+                        <br>
+                        <label class="text-white">Registrar:</label>
+                        <br>
+                        <input type="text" name="login" id="#login" placeholder="E-mail">
+                        <br><br>
+                        <input type="password" name="senha" id="#senha" placeholder="Senha">
+                        <br><br>
+                        <input type="password" name="confSenha" id="#confSenha" placeholder="Confirme a Senha">
+                        <br><br>
+                        <input class="btnRed" onclick="location.href='login.html'" type="submit" value="Registrar" id="#btn">
+                        <br>
+                        <label class="labelRegis text-white"><a href="login.html">Login</a></label>
+                        <br><br>
+                    </form>
+                </div>
+        </section>
+
+    </main>
+</body>
+</html>
