@@ -9,9 +9,9 @@ app.use(express.json());
 
 const db = mysql.createPool({
    connectionLimit: 100,
-   host: "127.0.0.1",
-   user: "root",
-   password: "",
+   host: "26.153.51.36",
+   user: "alfredogay",
+   password: "123",
    database: "dbDomus",
    port: "3306",
 });

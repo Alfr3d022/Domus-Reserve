@@ -105,6 +105,15 @@ body {
     margin-right: 8px;
 }
 
+.login-btn:hover, .register-btn:hover{
+    padding: 5px 13px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ff0000;
+    margin-right: 8px;
+}
+
 .responsive-img {
     width: 100%;
     height: auto;
@@ -173,6 +182,12 @@ body {
     background: #E4002B;
 }
 
+.btn:hover{
+    border-radius: 5px;
+    border: 5px solid #a7001f;
+    background: #E4002B;
+}
+
 .btnverde{
     border-radius: 5px;
     border: 5px solid green;
@@ -221,7 +236,14 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
+.fechar:hover{
+    background-color: #a7001f;
+}
+
 .quadrado{
-    width: 42px;
-    height: 42px;
+    margin: 1%;
+    position: absolute;
+    width: 110px;
+    height: 110px;
 }

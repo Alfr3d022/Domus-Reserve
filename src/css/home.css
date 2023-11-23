@@ -106,6 +106,15 @@ body {
     margin-right: 8px;
 }
 
+.login-btn:hover, .register-btn:hover{
+    padding: 5px 13px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ff0000;
+    margin-right: 8px;
+}
+
 .responsive-img {
     width: 100%;
     height: auto;
