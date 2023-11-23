@@ -48,7 +48,13 @@ body {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    cursor: pointer;
 }
+
+.btnRed:hover{
+    background: #a7001f;
+}
+
 
 .labelRegis{
     margin-left: 140px;
