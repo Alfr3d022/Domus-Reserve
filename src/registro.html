@@ -12,17 +12,17 @@
         <section class="backG">
                 <div class="inputRegistro">
                     <img class="imgRegistro"  src="imagens/marca.png" alt="Domus Reserve">
-                    <form action="/add-registro" method="POST">
+                    <form id="registroForm">
                         <br>
                         <label class="text-white">Registrar:</label>
                         <br>
-                        <input type="text" name="login" id="#login" placeholder="E-mail">
+                        <input type="text" name="login" id="emailRegistro" placeholder="E-mail">
                         <br><br>
-                        <input type="password" name="senha" id="#senha" placeholder="Senha">
+                        <input type="text" name="senha" id="nameRegistro" placeholder="Nome de usuário">
                         <br><br>
-                        <input type="password" name="confSenha" id="#confSenha" placeholder="Confirme a Senha">
+                        <input type="password" name="confSenha" id="senhaRegistro" placeholder="Senha">
                         <br><br>
-                        <input class="btnRed" onclick="location.href='login.html'" type="submit" value="Registrar" id="#btn">
+                        <button class="" type="submit">Registrar</button>
                         <br>
                         <label class="labelRegis text-white"><a href="login.html">Login</a></label>
                         <br><br>
@@ -31,5 +31,6 @@
         </section>
 
     </main>
+    <script src="js/registro.js"></script>
 </body>
 </html>
