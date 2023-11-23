@@ -180,18 +180,17 @@ body {
 }
 
 .janela-modal{
-    margin-top: 1%;
-    width: 86vw;
+    margin-top: 0%;
+    width: 100vw;
     height: 100vh;
-    position: relative;
+    position:fixed;
     top: 0;
     left: 0;
-    background-color:rgba(0, 0, 0, 0.199);
+    background-color:rgba(0, 0, 0, 0.397);
     display: none;
     align-items: center;
     justify-content: center;
     z-index: 999;
-    border-radius: 2%;
 }
 
 .janela-modal.abrir{
@@ -221,4 +220,8 @@ body {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
+}
+.quadrado{
+    width: 42px;
+    height: 42px;
 }
