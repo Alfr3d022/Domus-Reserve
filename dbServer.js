@@ -1,6 +1,11 @@
 const express = require("express")
 const app = express()
 const mysql = require("mysql")
+const bodyParser = require('body-parser')
+const notifier = require('node-notifier')
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 const db = mysql.createPool({
    connectionLimit: 100,
@@ -25,11 +30,12 @@ app.get("/",function (req,res){
    res.sendFile(__dirname + '/src/index.html')
 })
 
-app.post("/add-registro", async (req,res) => {
+app.post("/add-registro", function (req,res) {
 const zero = 0
 const user = req.body.login;
 const hashedPassword = req.body.senha;
-const email =  req.body.confsenha;
+const email =  req.body.confSenha;
+
 db.getConnection( async (err, connection) => {
  if (err) throw (err)
  const sqlSearch = "SELECT * FROM tab_users WHERE user_name = ?"
@@ -41,10 +47,15 @@ db.getConnection( async (err, connection) => {
   if (err) throw (err)
   console.log("------> Procurando usuários")
   console.log(result.length)
+  if(zero == "" || user == "" || hashedPassword == "" || email == "" ){
+   res.send("Por favor, preencha todos os campos obrigatórios.")
+  }else{
   if (result.length != 0) {
    connection.release()
    console.log("------> Usuário já existe")
-   res.sendStatus(409) 
+   if(confirm("Usuário já existe")){
+      res.sendFile(__dirname + '/src/registro.html')
+   }
   } 
   else {
    await connection.query (insert_query, (err, result)=> {
@@ -52,9 +63,10 @@ db.getConnection( async (err, connection) => {
    if (err) throw (err)
    console.log ("--------> Usuário criado!!")
    console.log(result.insertId)
-   res.sendStatus(201)
+   res.sendFile(__dirname + '/src/login.html')
   })
  }
+}
 }) 
 }) 
 }) 
