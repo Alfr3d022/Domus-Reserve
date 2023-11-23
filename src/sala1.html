@@ -52,13 +52,9 @@
             <h3>Datas Disponiveis:</h3>
             <div class="">
                 <form >
-                    <select class="btnCombo" name="" id="">
-                        <option value="">Teste</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
-                    <br><br>
-                    <button onclick="abrirModal()" class="btn">Alugar</button>
+                    <select id="meuSelect"></select>
+                        <br>
+                        <button onclick="abrirModal()" class="btn">Alugar</button>
                 </form>
                 <div class="janela-modal w3-center" id="janela-modal">
                     <div class="modal">
@@ -95,7 +91,7 @@
         <p>Powered by <a href="" target="_blank">Grupo de 4</a></p>
     </footer>
 
-    <script>
+    <script src="js/selectSala.js">
         // Used to toggle the menu on small screens when clicking on the menu button
         function myFunction() {
             var x = document.getElementById("navDemo");
@@ -106,7 +102,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
