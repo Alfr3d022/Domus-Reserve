@@ -69,3 +69,19 @@ body {
 .text-white {
     color: white
 }
+
+.zoom-in-out-box {
+    animation: zoom-in-zoom-out 3s ease infinite;
+  }
+  
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.05, 1.05);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }

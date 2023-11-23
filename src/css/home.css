@@ -30,7 +30,7 @@
     .grid-item img {
         width: 100%; /* A imagem preenche todo o espa�o do grid-item */
         height: auto; /* Mant�m a propor��o da imagem */
-        border-radius: 5px; /* Adicione bordas arredondadas, se desejado */
+        border-radius: 1px; /* Adicione bordas arredondadas, se desejado */
     }
 /* Estilos para tornar o grid responsivo */
 
