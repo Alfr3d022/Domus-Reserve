@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
           if (response.ok) {
              alert("Registro bem-sucedido!");
+             window.location.href = "login.html";
           } else if (response.status === 409) {
              alert("E-mail ou usuário já em uso!");
           } else {
