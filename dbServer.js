@@ -16,8 +16,6 @@ const db = mysql.createPool({
    port: "3306",
 });
 
-
-
 app.post("/registro", async (req, res) => {
    const user = req.body.name;
    const hashedPassword = req.body.password

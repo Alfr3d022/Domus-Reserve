@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return; 
       }
       const urlLogin = "http://127.0.0.1:3000/login";
-  
+      
       try {  
         const response = await fetch(urlLogin, {
           method: "POST",
