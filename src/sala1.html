@@ -20,16 +20,24 @@
     <!-- cabeçalho -->
     <div class="header-wrapper">
         <div class="header header-bottom-border">
-            <div class=""><p></p></div>
+            <div class="">
+                <p></p>
+            </div>
             <style>
                 .margen {
                     margin-left: 30%;
                 }
             </style>
             <div class="nav-options">
-                <a class="margen1" href="index.html"><h3>Home</h3></a>
-                <a href="locais.html"><h3>Locais</h3></a>
-                <a href="sobre.html"><h3>Sobre</h3></a>
+                <a class="margen1" href="index.html">
+                    <h3>Home</h3>
+                </a>
+                <a href="locais.html">
+                    <h3>Locais</h3>
+                </a>
+                <a href="sobre.html">
+                    <h3>Sobre</h3>
+                </a>
             </div>
             <div class="auth-buttons">
                 <a href="login.html" class="login-btn">Login</a>
@@ -53,31 +61,54 @@
             <div class="">
                 <form>
                     <select id="meuSelect"></select>
-                        <br>
-                    <button onclick="abrirModal()" class="btn" id="BtnAlugar">Alugar</button>
+                    <br>
+
                 </form>
+                <button onclick="abrirModal()" class="btn" id="BtnAlugar">Alugar</button>
                 <div class="janela-modal w3-center" id="janela-modal">
                     <div class="modal">
                         <button onclick="abrirModal()" class="fechar" id="fechar">X</button>
                         <h2 class="w3-center w3-text-red">Alugado</h2>
-                        <h5>Você acabou de alugar a Sala1 para o dia 01/01/2020!</h5>
+                        <h5>Você acabou de alugar a Sala1 para o dia <span id="dataSelecionada"></span></h5>
+                        <!-- adicionar o valor do select aqui -->
                         <form action="">
                             <br>
                             <br><br>
-                            <input class="w3-center btn w3-text-white" onclick="location.href='index.html'" type="button" value="Voltar ao inicio" id="#btn">
+                            <input class="w3-center btn w3-text-white" onclick="location.href='index.html'"
+                                type="button" value="Voltar ao inicio" id="#btn">
                             <br><br>
                         </form>
-                    </div> 
+                    </div>
                 </div>
             </div>
-            
-            
-
             <br><br>
-            <script src="js/popup.js"></script>
+            <script src="js/popup.js">
+
+
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const selectElement = document.getElementById("meuSelect"); 
+                    const dataSelecionadaElement = document.getElementById("dataSelecionada");
+
+                    selectElement.addEventListener("change", function () {
+                        dataSelecionadaElement.innerHTML = selectElement.value;
+                    });
+
+                    function alugarSala() {
+
+                        dataSelecionadaElement.innerHTML = selectElement.value;
+                        abrirModal();
+                    }
+
+                    document.getElementById("BtnAlugar").addEventListener("click", alugarSala);
+
+                    dataSelecionadaElement.innerHTML = selectElement.value;
+                });
+            </script>
         </div>
     </div>
-    
+
     <!-- Footer -->
     <footer class="w3-container footer1 w3-padding-1 w3-black w3-center w3-opacity">
         <div class="w3-xlarge w3-padding-32">
