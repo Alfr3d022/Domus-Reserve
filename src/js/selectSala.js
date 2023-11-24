@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const data = await response.json();
 
             console.log("Dados recebidos com sucesso:", data);
-
+            
             // Adiciona as opções ao <select>
             data.dates.forEach(date => {
                 const option = document.createElement("option");
