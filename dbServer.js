@@ -125,7 +125,7 @@ app.post("/retornaSelect", async (req, res) => {
    db.getConnection(async (err, connection) => {
       if (err) throw (err);
 
-      const sqlSearch = "SELECT distinct DATE_FORMAT(time_available, '%Y-%m-%d') AS time_available FROM dbdomus.tab_time_available";
+      const sqlSearch = "SELECT distinct DATE_FORMAT(time_available, '%Y-%m-%d') AS time_available FROM dbdomus.tab_time_available where ind_available = 0";
 
       await connection.query(sqlSearch, async (err, result) => {
          if (err) throw (err);
@@ -150,6 +150,48 @@ app.post("/retornaSelect", async (req, res) => {
    });
 });
 
+
+app.post("/alteraIndTime", async (req, res) => {
+   try {
+      const data = req.body.data;
+
+      // Verifica se a data foi fornecida na requisição
+      if (!data) {
+         console.error("Data não fornecida na requisição");
+         return res.status(400).send("A data é obrigatória na requisição");
+      }
+
+      db.getConnection(async (err, connection) => {
+         try {
+            if (err) {
+               console.error("Erro ao obter conexão com o banco de dados:", err);
+               throw err;
+            }
+
+            const sqlUpdate = "UPDATE tab_time_available SET ind_available = 1 WHERE time_available = ?";
+            const updateQuery = mysql.format(sqlUpdate, [data]);
+
+            await connection.query(updateQuery, (err) => {
+               connection.release();
+
+               if (err) {
+                  console.error("Erro ao executar a atualização no banco de dados:", err);
+                  throw err;
+               }
+
+               console.log("--------> Sala alugada!!");
+               res.sendStatus(201);
+            });
+         } catch (updateError) {
+            console.error("Erro durante a execução da atualização:", updateError);
+            res.status(500).send("Erro interno do servidor");
+         }
+      });
+   } catch (error) {
+      console.error("Erro durante a execução do endpoint:", error);
+      res.status(500).send("Erro interno do servidor");
+   }
+});
 
 const port = 3000;
 app.listen(port, () => console.log(`Servidor rodando na porta: ${port}...`));

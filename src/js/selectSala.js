@@ -10,12 +10,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             headers: {
                 "Content-Type": "application/json",
             },
-            // corpo da requisição, se necessário
         });
 
         if (response.ok) {
             const data = await response.json();
-
             console.log("Dados recebidos com sucesso:", data);
             
             // Adiciona as opções ao <select>
@@ -33,4 +31,34 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch (error) {
         console.error("Erro durante a execução do script:", error);
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const selectElement = document.getElementById("meuSelect");
+    const buttonElement = document.getElementById("BtnAlugar");
+
+    // Adiciona um evento de clique ao botão
+    buttonElement.addEventListener("click", async function () {
+        try {
+            // Obtém a data selecionada no select
+            const selectedDate = selectElement.value;
+
+            // Faz a requisição ao servidor para alterar o indicador de disponibilidade
+            const response = await fetch("http://127.0.0.1:3000/alteraIndTime", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ data: selectedDate }),
+            });
+
+            if (response.ok) {
+                console.log("Indicador de disponibilidade alterado com sucesso!");
+            } else {
+                console.error("Erro ao alterar o indicador de disponibilidade:", response.status);
+            }
+        } catch (error) {
+            console.error("Erro durante a execução do script:", error);
+        }
+    });
 });
