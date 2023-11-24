@@ -60,7 +60,7 @@
             <h3>Datas Disponiveis:</h3>
             <div class="">
                 <form>
-                    <select class="btnCombo" id="meuSelect"></select>
+                    <select class="btnCombo" id="meuSelect" ></select>
                     <br><br>
                 </form>
                 <button onclick="abrirModal()" class="btn" id="BtnAlugar">Alugar</button>
@@ -81,10 +81,6 @@
             </div>
             <br><br>
             <script src="js/popup.js">
-
-
-            </script>
-            <script>
                 document.addEventListener("DOMContentLoaded", function () {
                     const selectElement = document.getElementById("meuSelect"); 
                     const dataSelecionadaElement = document.getElementById("dataSelecionada");
@@ -103,6 +99,7 @@
 
                     dataSelecionadaElement.innerHTML = selectElement.value;
                 });
+
             </script>
         </div>
     </div>
@@ -117,7 +114,7 @@
             <i class="fa fa-twitter w3-hover-opacity"></i>
             <i class="fa fa-linkedin w3-hover-opacity"></i>
         </div>
-        <p>Powered by <a href="" target="_blank">Grupo de 4</a></p>
+        <p>Powered by <a href="" target="_blank">Grupo 4</a></p>
     </footer>
 
     <script src="js/selectSala.js">
