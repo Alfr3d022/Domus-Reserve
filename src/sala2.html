@@ -51,27 +51,24 @@
             <br>
             <h3>Datas Disponiveis:</h3>
             <div class="">
-                <a class="login-btn">01/01/2020 00:00:00</a>
-                <a class="login-btn">01/01/2020 00:00:00</a>
-                <div>
-                    <br>
-                    <button onclick="abrirModal()" class="btn">Alugar</button>
+                <form>
+                    <select class="btnCombo" id="meuSelect"></select>
+                    <br><br>
+                    <button onclick="abrirModal()" class="btn" id="BtnAlugar">Alugar</button>
+                </form>
+                <div class="janela-modal w3-center" id="janela-modal">
+                    <div class="modal">
+                        <button onclick="abrirModal()" class="fechar" id="fechar">X</button>
+                        <h2 class="w3-center w3-text-red">Alugado</h2>
+                        <h5>Você acabou de alugar a Sala1</h5>
+                        <form action="">
+                            <br>
+                            <br><br>
+                            <input class="w3-center btn w3-text-white" onclick="location.href='index.html'" type="button" value="Voltar ao inicio" id="#btn">
+                            <br><br>
+                        </form>
+                    </div> 
                 </div>
-
-            </div>
-            
-            <div class="janela-modal w3-center" id="janela-modal">
-                <div class="modal">
-                    <button onclick="abrirModal()" class="fechar" id="fechar">X</button>
-                    <h2 class="w3-center w3-text-red">Alugado</h2>
-                    <h5>Você acabou de alugar a Sala2 para o dia 01/01/2020!</h5>
-                    <form action="">
-                        <br>
-                        <br><br>
-                        <input class="w3-center btn w3-text-white" onclick="location.href='index.html'" type="button" value="Voltar ao inicio" id="#btn">
-                        <br><br>
-                    </form>
-                </div> 
             </div>
 
             <br><br>
